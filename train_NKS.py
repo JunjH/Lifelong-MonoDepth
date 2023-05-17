@@ -76,8 +76,8 @@ def train(net, net_, train_loader_scans, replay_nyu, replay_kitti, optimizer):
         depth = sample_batched['depth'].cuda()
                 
         optimizer.zero_grad()
-        out = net(image)
-        out_ = net_(image)
+        out, _ = net(image)
+        out_, _ = net_(image)
         
         ##############calculate distillation loss for old tasks
         pred_task1, um_task1 = out[0][0], out[0][1]
@@ -106,7 +106,7 @@ def train(net, net_, train_loader_scans, replay_nyu, replay_kitti, optimizer):
             #####################################################replay nyu
             replay_nyu_batch =  replay_nyu_iter.next()
             replay_nyu_img, replay_nyu_depth = replay_nyu_batch['image'].cuda(), replay_nyu_batch['depth'].cuda() 
-            replay_out_nyu = net(replay_nyu_img)
+            replay_out_nyu, _ = net(replay_nyu_img)
            
             replay_pred_task1, replay_um_task1 = replay_out_nyu[0][0], replay_out_nyu[0][1]                        
             replay_pred_task1 = torch.nn.functional.upsample(replay_pred_task1, size=[replay_nyu_depth.size(2),replay_nyu_depth.size(3)], mode='bilinear', align_corners=True)
@@ -122,7 +122,7 @@ def train(net, net_, train_loader_scans, replay_nyu, replay_kitti, optimizer):
             #####################################################replay kitti
             replay_kitti_batch =  replay_kitti_iter.next()
             replay_kitti_img, replay_kitti_depth = replay_kitti_batch['image'].cuda(), replay_kitti_batch['depth'].cuda() 
-            replay_out_kitti = net(replay_kitti_img)
+            replay_out_kitti, _ = net(replay_kitti_img)
            
             replay_pred_task2, replay_um_task2 = replay_out_kitti[1][0], replay_out_kitti[1][1]                        
             replay_pred_task2 = torch.nn.functional.upsample(replay_pred_task2, size=[replay_kitti_depth.size(2),replay_kitti_depth.size(3)], mode='bilinear', align_corners=True)

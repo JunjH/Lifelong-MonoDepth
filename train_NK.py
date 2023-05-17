@@ -71,8 +71,8 @@ def train(net, net_, train_loader_kitti, replay_nyu, optimizer):
         depth = sample_batched['depth'].cuda()
         
         optimizer.zero_grad()
-        out = net(image)
-        out_ = net_(image)
+        out, _ = net(image)
+        out_, _ = net_(image)
         
         ##############calculate distillation loss for task1
         pred_task1, um_task1 = out[0][0], out[0][1]
@@ -96,7 +96,7 @@ def train(net, net_, train_loader_kitti, replay_nyu, optimizer):
         try:
             replay_nyu_batch =  replay_nyu_iter.next()
             replay_nyu_img, replay_nyu_depth = replay_nyu_batch['image'].cuda(), replay_nyu_batch['depth'].cuda() 
-            replay_out = net(replay_nyu_img)
+            replay_out, _ = net(replay_nyu_img)
            
             replay_pred_task1, replay_um_task1 = replay_out[0][0], replay_out[0][1]                        
             replay_pred_task1 = torch.nn.functional.upsample(replay_pred_task1, size=[replay_nyu_depth.size(2),replay_nyu_depth.size(3)], mode='bilinear', align_corners=True)

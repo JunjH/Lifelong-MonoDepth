@@ -58,7 +58,7 @@ def train(net, train_loader_nyu, optimizer):
         depth = sample_batched['depth'].cuda()
         
         optimizer.zero_grad()
-        out = net(image)
+        out, _ = net(image)
 
         pred, um = out[0][0], out[0][1]
         pred = torch.nn.functional.upsample(pred, size=[depth.size(2),depth.size(3)], mode='bilinear', align_corners=True)

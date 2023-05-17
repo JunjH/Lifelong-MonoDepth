@@ -67,7 +67,7 @@ def test(test_loader, net, task):
             depth = depth.cuda()
             image = image.cuda()
 
-            out = net(image)
+            out, _ = net(image)
             output, um = out[task][0], out[task][1]
             output = torch.nn.functional.upsample(output, size=[depth.size(2),depth.size(3)], mode='bilinear', align_corners=True)
 
