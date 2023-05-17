@@ -15,7 +15,7 @@ from models import modules, net, resnet
 import pdb
 import copy
 import os
-os.environ["CUDA_VISIBLE_DEVICES"] = "3"
+os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
 parser = argparse.ArgumentParser(description='Single-line LiDAR Completion')
 parser.add_argument('--epochs', default=20, type=int, help='number of total epochs to run')
