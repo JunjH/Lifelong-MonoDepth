@@ -44,4 +44,4 @@ class model_ll(nn.Module):
         for i in range(self.num_tasks):      
             out[i] = self.tasks[i](x_mff)
          
-        return out
+        return out, x_mff
