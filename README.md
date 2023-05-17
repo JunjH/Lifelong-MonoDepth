@@ -1,6 +1,6 @@
 # Lifelong-MonoDepth: Lifelong Learning for Multi-Domain Monocular Metric Depth Estimation
 
-We present an efficient multi-head framework that enables lifelong, cross-domain, and scare-aware monocular depth learning. Depth maps in the real world are significantly different across domains; their quality and scales are domain dependent. Therefore, the model has to assemble multiple prediction branches for multi-domain metric depth inference. Therefore, we present a framework that consists of a domain-shared encoder and multiple domain-specific predictors. The framework allows robust metric depth learning across multi-domains. For more detailed information, please check our [paper](https://arxiv.org/pdf/2303.05050.pdf).
+We present an efficient multi-head framework that enables lifelong, cross-domain, and scare-aware monocular depth learning. Depth maps in the real world are significantly different across domains; their quality and scales are domain dependent. Therefore, the model has to assemble multiple prediction branches for multi-domain metric depth inference. To this end, we present a framework that consists of a domain-shared encoder and multiple domain-specific predictors. The framework allows robust metric depth learning across multi-domains. For more detailed information, please check our [paper](https://arxiv.org/pdf/2303.05050.pdf).
 
 <p align="center">
  <img src="figs/method.png" alt="photo not available" width="90%" height="80%">
