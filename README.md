@@ -1,6 +1,6 @@
 # Lifelong-MonoDepth: Lifelong Learning for Multi-Domain Monocular Metric Depth Estimation
 
-We present an efficient multi-head framework that enables lifelong, cross-domain, and scare-aware monocular depth learning.
+We present an efficient multi-head framework that enables lifelong, cross-domain, and scare-aware monocular depth learning. For more detailed information, please check our [paper](https://arxiv.org/pdf/2303.05050.pdf).
 
 Results
 -
