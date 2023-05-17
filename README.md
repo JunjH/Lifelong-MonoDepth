@@ -1,6 +1,6 @@
 # Lifelong-MonoDepth: Lifelong Learning for Multi-Domain Monocular Metric Depth Estimation
 
-We present an efficient multi-head framework that enables lifelong, cross-domain, and scare-aware monocular depth learning. Depth maps in the real world are significantly different across domains; their quality and scales are domaindependent. Therefore, the model has to assemble multiple prediction branches for multi-domain metric depth inference. Therefore, we present a framework that consists of a domain-shared encoder and domain-specific layers. The framework allows robust metric depth learning across multi-domains. For more detailed information, please check our [paper](https://arxiv.org/pdf/2303.05050.pdf).
+We present an efficient multi-head framework that enables lifelong, cross-domain, and scare-aware monocular depth learning. Depth maps in the real world are significantly different across domains; their quality and scales are domaindependent. Therefore, the model has to assemble multiple prediction branches for multi-domain metric depth inference. Therefore, we present a framework that consists of a domain-shared encoder and multiple domain-specific predictors. The framework allows robust metric depth learning across multi-domains. For more detailed information, please check our [paper](https://arxiv.org/pdf/2303.05050.pdf).
 
 <p align="center">
  <img src="figs/method.png" alt="photo not available" width="90%" height="80%">
@@ -51,8 +51,11 @@ We provide all trained models as follows. We name the model in the order of lear
 Running
 -
 + ### Test<br>
-	 Testing with domain prior assuming learning orders are given as a prior: python test.py<br>
-	 Testing without domain prior requiring automatically select the domain-specific predictor during inference: python test_inference.py<br>
+ 	Download a trained model that you want to test and put it into ./runs/. The default model is NKS.pth.tar.
+	
+	 1. Testing with domain prior that assumes learning orders are given as a prior: python test.py<br>	 
+	 2. Testing without domain prior that requires automatically select the domain-specific predictor during inference: python test_inference.py<br>
+	 
 + ### Train<br>
 	The following shows examples of learning in the order of NYU-v2 → KITTI → ScanNet
 	
