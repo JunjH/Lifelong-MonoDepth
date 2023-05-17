@@ -12,9 +12,12 @@ Qualitative comparisons.
 
 
 Datasets
--NYU-v2
--KITTI
--ScanNet
+-
+We provided data index of RGB and depth pairs for both training and test set of all three datasets in csv file, you can find them in ./datasets/. Then, download the data required for training and test.
+
++ NYU-v2, download via the [link](https://drive.google.com/file/d/1WoOZOBpOWfmwe7bknWS5PMUCLBPFKTOw/view?usp=sharing) <br>
++ KITTI, download via the [official homepage](https://www.cvlibs.net/datasets/kitti/eval_depth.php?benchmark=depth_prediction)<br>
++ ScanNet, download via the [official homepage](http://www.scan-net.org/#code-and-data)<br>
 
 Running
 -
