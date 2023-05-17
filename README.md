@@ -1,13 +1,24 @@
 # Lifelong-MonoDepth: Lifelong Learning for Multi-Domain Monocular Metric Depth Estimation
 
-We present an efficient multi-head framework that enables lifelong, cross-domain, and scare-aware monocular depth learning. For more detailed information, please check our [paper](https://arxiv.org/pdf/2303.05050.pdf).
+We present an efficient multi-head framework that enables lifelong, cross-domain, and scare-aware monocular depth learning. Depth maps in the real world are significantly different across domains; their quality and scales are domaindependent. Therefore, the model has to assemble multiple prediction branches for multi-domain metric depth inference. Therefore, we present a framework that consists of a domain-shared encoder and domain-specific layers. The framework allows robust metric depth learning across multi-domains. For more detailed information, please check our [paper](https://arxiv.org/pdf/2303.05050.pdf).
+
+<p align="center">
+ <img src="figs/method.png" alt="photo not available" width="90%" height="80%">
+</p>
+
 
 Results
 -
-Qualitative comparisons.
+We show through experiments that the proposed method can 
+
++ enable lifelong learning for scare-aware depth estimation,
++ cope with significant domain shift, 
++ infer a depth map in real time.
+
+Qualitative comparisons:
 
 <p align="center">
- <img src="figs/res.png" alt="photo not available" width="80%" height="80%">
+ <img src="figs/res.png" alt="photo not available" width="82%" height="80%">
 </p>
 
 
@@ -15,9 +26,9 @@ Datasets
 -
 We provided data index of RGB and depth pairs for both training and test set of all three datasets in csv file, you can find them in ./datasets/. Then, download the data required for training and test.
 
-+ NYU-v2, download via the [link](https://drive.google.com/file/d/1WoOZOBpOWfmwe7bknWS5PMUCLBPFKTOw/view?usp=sharing) <br>
-+ KITTI, download via the [official homepage](https://www.cvlibs.net/datasets/kitti/eval_depth.php?benchmark=depth_prediction)<br>
-+ ScanNet, download via the [official homepage](http://www.scan-net.org/#code-and-data)<br>
++ NYU-v2 (0~10 meters), download via the [link](https://drive.google.com/file/d/1WoOZOBpOWfmwe7bknWS5PMUCLBPFKTOw/view?usp=sharing) <br>
++ KITTI (0~80 meters), download via the [official homepage](https://www.cvlibs.net/datasets/kitti/eval_depth.php?benchmark=depth_prediction)<br>
++ ScanNet (0-6 meters), download via the [official homepage](http://www.scan-net.org/#code-and-data)<br>
 
 Trained Models
 -
@@ -40,10 +51,12 @@ We provide all trained models as follows. We name the model in the order of lear
 Running
 -
 + ### Test<br>
-	 Testing with domain prior: python test.py<br>
-	 Testing without domain prior: python test_inference.py<br>
+	 Testing with domain prior assuming learning orders are given as a prior: python test.py<br>
+	 Testing without domain prior requiring automatically select the domain-specific predictor during inference: python test_inference.py<br>
 + ### Train<br>
-	 Training on a single-domain: python train_N.py<br>
-	 Training on two domains: python train_NK.py<br>
-   Training on three domains: python train_NK.py<br>
+	The following shows examples of learning in the order of NYU-v2 → KITTI → ScanNet
+	
+	 1. Training on a single-domain: python train_N.py<br>
+	 2. Training on two domains: python train_NK.py<br>
+   	 3. Training on three domains: python train_NKS.py<br>
 
