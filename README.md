@@ -66,9 +66,14 @@ Running
 Citation
 -
 
-    @article{hu2023lifelong,
-  		title={Lifelong-MonoDepth: Lifelong Learning for Multi-Domain Monocular Metric Depth Estimation},
-  		author={Hu, Junjie and Fan, Chenyou and Zhou, Liguang and Gao, Qing and Liu, Honghai and Lam, Tin Lun},
-  		journal={arXiv preprint arXiv:2303.05050},
-  		year={2023}
-	}
+    @ARTICLE{10293000,
+	  author={Hu, Junjie and Fan, Chenyou and Zhou, Liguang and Gao, Qing and Liu, Honghai and Lam, Tin Lun},
+	  journal={IEEE Transactions on Neural Networks and Learning Systems}, 
+	  title={Lifelong-MonoDepth: Lifelong Learning for Multidomain Monocular Metric Depth Estimation}, 
+	  year={2023},
+	  volume={},
+	  number={},
+	  pages={1-11},
+	  doi={10.1109/TNNLS.2023.3323487}
+   }
+
