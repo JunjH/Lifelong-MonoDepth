@@ -74,6 +74,5 @@ Citation
 	  volume={},
 	  number={},
 	  pages={1-11},
-	  doi={10.1109/TNNLS.2023.3323487}
-   }
+	  doi={10.1109/TNNLS.2023.3323487}}
 
