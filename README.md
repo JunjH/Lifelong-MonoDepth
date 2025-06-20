@@ -70,9 +70,8 @@ Citation
 	  author={Hu, Junjie and Fan, Chenyou and Zhou, Liguang and Gao, Qing and Liu, Honghai and Lam, Tin Lun},
 	  journal={IEEE Transactions on Neural Networks and Learning Systems}, 
 	  title={Lifelong-MonoDepth: Lifelong Learning for Multidomain Monocular Metric Depth Estimation}, 
-	  year={2023},
-	  volume={},
-	  number={},
-	  pages={1-11},
-	  doi={10.1109/TNNLS.2023.3323487}}
+	  year={2025},
+	  volume={36},
+	  number={1},
+	  pages={796-806}}
 
